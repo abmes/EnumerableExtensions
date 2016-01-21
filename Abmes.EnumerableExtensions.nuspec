@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Abmes.EnumerableExtensions</id>
+    <version>$version$</version>
+    <authors>Abmes</authors>
+    <licenseUrl>https://github.com/abmes/EnumerableExtensions/blob/master/license.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <title>Abmes Enumerable Extensions</title>
+    <description>Extensions for Enumerables</description>
+    <projectUrl>https://github.com/abmes/EnumerableExtensions</projectUrl>
+    <iconUrl>https://en.gravatar.com/userimage/79846298/52cbbcdfa221ce4fea5ebea5928aa1e7.png</iconUrl>
+    <copyright>Copyright 2016 Abmes</copyright>
+  </metadata>
+  <files>
+    <file src="Abmes.EnumerableExtensions\bin\Release\Abmes.EnumerableExtensions.dll" target="lib\net45\" />
+  </files>
+</package>
