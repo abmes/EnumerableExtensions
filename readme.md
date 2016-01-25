@@ -15,8 +15,6 @@ The extension is based on [this blogpost](http://www.siepman.nl/blog/post/2015/0
 
 Sample usage:
 ```c#
-private IEnumerable<int> GetLocalMaxima(ICollection<int> items)
-{
-    return items.WithPositionalContext().Where(x => (x.Previous < x.Current) && (x.Current > x.Next));
-}
+private IEnumerable<int> GetLocalMaxima(ICollection<int> items) =>
+    items.WithPositionalContext().Where(x => (x.Previous < x.Current) && (x.Current > x.Next));
 ```

@@ -30,7 +30,6 @@ namespace Abmes.EnumerableExtensions
             }
         }
 
-        public static IEnumerable<ElementWithPositionalContext<T>> WithPositionalContext<T>(this List<T> source) => GetEnumerableWithPositionalContext(source);
-        public static IEnumerable<ElementWithPositionalContext<T>> WithPositionalContext<T>(this T[] source) => GetEnumerableWithPositionalContext(source);
+        public static IEnumerable<ElementWithPositionalContext<T>> WithPositionalContext<T>(this ICollection<T> source) => GetEnumerableWithPositionalContext(source);
     }
 }
