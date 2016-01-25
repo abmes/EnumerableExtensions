@@ -8,4 +8,15 @@ WithPositionalContext extension
 -------------------------------
 
 This is an extension method for adding positional context to the elements of an ICollection.
+
 It maps each element to an ElementWithPositionalContext which has details about its position - Index, Previous, Current and Next element as well as IsFirst and IsLast flags.
+
+The extension is based on [this blogpost](http://www.siepman.nl/blog/post/2015/02/09/Add-context-to-IEnumerable-elements.aspx) by Alex Siepman
+
+Sample usage:
+```c#
+private IEnumerable<int> GetLocalMaxima(ICollection<int> items)
+{
+    return items.WithPositionalContext().Where(x => (x.Previous < x.Current) && (x.Current > x.Next));
+}
+```
