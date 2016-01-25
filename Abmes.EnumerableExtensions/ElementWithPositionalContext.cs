@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace Abmes.EnumerableExtensions
 {
-    public class ElementWithContext<T>
+    public class ElementWithPositionalContext<T>
     {
-        public T Previous { get; private set; }
-        public T Next { get; private set; }
-        public T Current { get; private set; }
         public int Index { get; private set; }
+        public T Previous { get; private set; }
+        public T Current { get; private set; }
+        public T Next { get; private set; }
         public bool IsFirst { get; private set; }
         public bool IsLast { get; private set; }
 
-        public ElementWithContext(T current, T previous, T next, int index, bool isFirst, bool isLast)
+        public ElementWithPositionalContext(int index, T previous, T current, T next, bool isFirst, bool isLast)
         {
-            Current = current;
-            Previous = previous;
-            Next = next;
             Index = index;
+            Previous = previous;
+            Current = current;
+            Next = next;
             IsFirst = isFirst;
             IsLast = isLast;
         }

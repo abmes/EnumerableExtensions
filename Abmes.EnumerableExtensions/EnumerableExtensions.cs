@@ -8,7 +8,7 @@ namespace Abmes.EnumerableExtensions
 {
     public static class EnumerableExtensions
     {
-        private static IEnumerable<ElementWithContext<T>> GetEnumerableWithContext<T>(IEnumerable<T> source)
+        private static IEnumerable<ElementWithPositionalContext<T>> GetEnumerableWithPositionalContext<T>(IEnumerable<T> source)
         {
             if (source.Any())
             {
@@ -19,18 +19,18 @@ namespace Abmes.EnumerableExtensions
 
                 foreach (T next in source.Skip(1))
                 {
-                    yield return new ElementWithContext<T>(current, previous, next, index, isFirst, false);
+                    yield return new ElementWithPositionalContext<T>(index, previous, current, next, isFirst, false);
                     previous = current;
                     current = next;
                     isFirst = false;
                     index++;
                 }
 
-                yield return new ElementWithContext<T>(current, previous, default(T), index, false, true);
+                yield return new ElementWithPositionalContext<T>(index, previous, current, default(T), false, true);
             }
         }
 
-        public static IEnumerable<ElementWithContext<T>> WithContext<T>(this List<T> source) => GetEnumerableWithContext(source);
-        public static IEnumerable<ElementWithContext<T>> WithContext<T>(this T[] source) => GetEnumerableWithContext(source);
+        public static IEnumerable<ElementWithPositionalContext<T>> WithPositionalContext<T>(this List<T> source) => GetEnumerableWithPositionalContext(source);
+        public static IEnumerable<ElementWithPositionalContext<T>> WithPositionalContext<T>(this T[] source) => GetEnumerableWithPositionalContext(source);
     }
 }
