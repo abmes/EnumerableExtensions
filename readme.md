@@ -18,3 +18,24 @@ Sample usage:
 public IEnumerable<int> GetLocalMaxima(ICollection<int> items) =>
     items.WithPositionalContext().Where(x => (x.Previous < x.Current) && (x.Current > x.Next)).Select(x => x.Current);
 ```
+
+WithExceptionMessageWhenNoElements
+----------------------------------
+
+This is an extension method for changing the default message of the exception thrown by some methods of the IEnumerable like Single, First and others when the sequence contains no elements.
+
+The original messages of the thrown InvalidOperationException are
+* Sequence contains no elements
+* Sequence contains no matching element
+* Sequence contains more than one matching element
+
+The extension method wraps the call and if such an InvalidOperationException (with one of the above messages) is thrown it creates and throws a new InvalidOperationException with the new message and sets the InnerException to the original InvalidOperationException.
+
+Sample usage:
+```c#
+public Address GetCustomerAddress(IEnumerable<Address> customerAddresses) =>
+    customerAddresses
+        .Where(a => a.IsMain)
+        .WithExceptionMessageWhenNoElements("Customer has more than one main address")
+        .Single();
+```
