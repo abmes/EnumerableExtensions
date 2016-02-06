@@ -42,6 +42,12 @@
   <ItemGroup>
     <Compile Include="ElementWithPositionalContext.cs" />
     <Compile Include="EnumerableExtensions.cs" />
+    <Compile Include="EnumerableThrowingNoElementsWithCustomMessage\EnumerableDecimalThrowingNoElementsWithCustomMessage.cs" />
+    <Compile Include="EnumerableThrowingNoElementsWithCustomMessage\EnumerableDoubleThrowingNoElementsWithCustomMessage.cs" />
+    <Compile Include="EnumerableThrowingNoElementsWithCustomMessage\EnumerableFloatThrowingNoElementsWithCustomMessage.cs" />
+    <Compile Include="EnumerableThrowingNoElementsWithCustomMessage\EnumerableIntThrowingNoElementsWithCustomMessage.cs" />
+    <Compile Include="EnumerableThrowingNoElementsWithCustomMessage\EnumerableLongThrowingNoElementsWithCustomMessage.cs" />
+    <Compile Include="EnumerableThrowingNoElementsWithCustomMessage\EnumerableThrowingNoElementsWithCustomMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
