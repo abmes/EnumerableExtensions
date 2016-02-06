@@ -29,13 +29,13 @@ The original messages of the thrown InvalidOperationException are
 * Sequence contains no matching element
 * Sequence contains more than one matching element
 
-The extension method wraps the call and if such an InvalidOperationException (with one of the above messages) is thrown it creates and throws a new InvalidOperationException with the new message and sets the InnerException to the original InvalidOperationException.
+The extension method wraps the call and if such an InvalidOperationException (with one of the above messages) is thrown it creates and throws a new InvalidOperationException with the specified message and sets the InnerException to the original InvalidOperationException.
 
 Sample usage:
 ```c#
-public Address GetCustomerAddress(IEnumerable<Address> customerAddresses) =>
+public Address GetCustomerFirstMainAddress(IEnumerable<Address> customerAddresses) =>
     customerAddresses
         .Where(a => a.IsMain)
-        .WithExceptionMessageWhenNoElements("Customer has more than one main address")
-        .Single();
+        .WithExceptionMessageWhenNoElements("The customer does not have a main address")
+        .First();
 ```
