@@ -31,7 +31,8 @@ namespace Abmes.EnumerableExtensions
             }
         }
 
-        public static IEnumerable<ElementWithPositionalContext<T>> WithPositionalContext<T>(this ICollection<T> source) => GetEnumerableWithPositionalContext(source);
+        public static IEnumerable<ElementWithPositionalContext<T>> WithPositionalContext<T>(this ICollection<T> source) =>
+            GetEnumerableWithPositionalContext(source);
 
         public static IEnumerableThrowingNoElementsWithCustomMessage<TSource> WithExceptionMessageWhenNoElements<TSource>(this IEnumerable<TSource> source, string messageWhenNoElements) =>
             new EnumerableThrowingNoElementsWithCustomMessage<TSource>(source, messageWhenNoElements);
